@@ -1,5 +1,5 @@
 {% set name = "deepface" %}
-{% set version = "0.0.75" %}
+{% set version = "0.0.78" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepface-{{ version }}.tar.gz
-  sha256: cb1513b2c78ccbf50ae2d2f612397fe87acafc79bf25cabd4586c08d44d7187c
+  sha256: e1c5c1ab8add6bfc891667dc6802ec6f172b9f4588e01b7dd44622fb934de6c7
 
 build:
   entry_points:
     - deepface = deepface.DeepFace:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
-  skip: True  # [win]
+  number: 0
+  skip: true  # [win]
   # https://github.com/serengil/deepface/issues/486
 
 requirements:
