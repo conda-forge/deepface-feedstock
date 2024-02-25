@@ -1,5 +1,5 @@
 {% set name = "deepface" %}
-{% set version = "0.0.84" %}
+{% set version = "0.0.85" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepface-{{ version }}.tar.gz
-  sha256: cefe49225f99788aae5f106a6b4509e9d6dc99143f4631ff3b5b767d08bf9fd7
+  sha256: 7f5edb58711dad8196cc7827a997791bfc4289c9f33453d6672c5fd5dd51a95c
 
 build:
   entry_points:
