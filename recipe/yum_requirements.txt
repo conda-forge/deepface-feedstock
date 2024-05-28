@@ -1,1 +1,2 @@
 mesa-libGL
+libgl1-mesa-glx
