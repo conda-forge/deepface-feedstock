@@ -1,5 +1,5 @@
 {% set name = "deepface" %}
-{% set version = "0.0.89" %}
+{% set version = "0.0.93" %}
 
 package:
   name: {{ name|lower }}
@@ -7,34 +7,36 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepface-{{ version }}.tar.gz
-  sha256: 92c803fbb234a6601bf2b5540d8e635ba0dfd24aa697e3b0eae52b71285e2050
+  sha256: 7f5fc6306a3a07ee6c529b03571e64fe53d9f259e1d4091f5e28386264962b92
 
 build:
   entry_points:
     - deepface = deepface.DeepFace:cli
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [win]
-  # https://github.com/serengil/deepface/issues/486
+  noarch: python
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.7
   run:
-    - fire >=0.4.0
-    - flask >=1.1.2
-    - gdown >=3.10.1
-    - keras >=2.2.0
-    - mtcnn >=0.1.0
+    - python >=3.7
+    - requests >=2.27.1
     - numpy >=1.14.0
-    - opencv >=4.5.5
     - pandas >=0.23.4
-    - pillow >=5.2.0
-    - python
-    - retina-face >=0.0.1
-    - tensorflow >=1.9.0
+    - gdown >=3.10.1
     - tqdm >=4.30.0
+    - pillow >=5.2.0
+    - opencv >=4.5.5.64
+    - tensorflow >=1.9.0
+    - keras >=2.2.0
+    - flask >=1.1.2
+    - flask-cors >=4.0.1
+    - mtcnn >=0.1.0
+    - retina-face >=0.0.1
+    - fire >=0.4.0
+    - gunicorn >=20.1.0
 
 test:
   imports:
