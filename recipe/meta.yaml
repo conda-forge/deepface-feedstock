@@ -6,14 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deepface-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deepface-{{ version }}.tar.gz
   sha256: 92c803fbb234a6601bf2b5540d8e635ba0dfd24aa697e3b0eae52b71285e2050
 
 build:
   entry_points:
     - deepface = deepface.DeepFace:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [win]
   # https://github.com/serengil/deepface/issues/486
 
